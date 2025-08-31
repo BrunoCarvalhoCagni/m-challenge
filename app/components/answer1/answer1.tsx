@@ -12,7 +12,6 @@ export function Answer1() {
     if (inputRef.current) {
       inputRef.current.value = "";
     }
-    console.log("duplicatesArray", duplicatesArray);
 
   }
   return (
