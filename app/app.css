@@ -13,3 +13,11 @@ body {
     color-scheme: dark;
   }
 }
+
+a{
+  text-decoration: underline;
+  color: lightblue;
+}
+a:visited{
+  color: purple;
+}

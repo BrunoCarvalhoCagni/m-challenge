@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { Selector } from "../components/selector/selector";
+import { Answer1 } from "~/components/answer1/answer1";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +9,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Selector />;
+  return <Answer1/>;
 }
