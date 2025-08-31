@@ -1,0 +1,21 @@
+.question3-container{
+    display: flex;
+    flex-direction: column;
+    width: 444px;
+    height: 554px;
+    background-color: white;
+    gap: 5px;
+    font-size: 20px;
+}
+.question3-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #54d5eb;
+    width: 100%;
+    height: 50px;
+}
+.question3-col-1{
+    
+}
