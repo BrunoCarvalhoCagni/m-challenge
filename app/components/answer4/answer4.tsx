@@ -4,16 +4,41 @@ import { useState, useRef } from "react";
 
 export function Answer4() {
   const [arrayText, setArrayText] = useState("");
-  const [scopeBoolean, setScopeBoolean] = useState(true);
+  const [scopeBoolean, setScopeBoolean] = useState<Boolean>();
   const inputRef = useRef<HTMLInputElement>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const findOpenBrackets = () => {
     const openingCharacters = ["(", "[", "{"];
     const closingCharacters = [")", "]", "}"];
+    let lastCharacterStack = [];
+    const possiblePairs = new Map([
+      [")", "("],
+      ["}", "{"],
+      ["]", "["],
+    ]);
+
+    for(let char of arrayText){
+      if(openingCharacters.includes(char)){
+        lastCharacterStack.push(char);
+      }else if(closingCharacters.includes(char)){
+        if (lastCharacterStack.pop() !== possiblePairs.get(char)) {
+          return false;
+        }
+      }
+
+    }
+    if(lastCharacterStack.length > 0){
+      return false;
+    }else{
+      return true;
+    }
     
-    setShowAnswer(true);
 
   }
+  const handleCheck = () => {
+    setScopeBoolean(findOpenBrackets);
+    setShowAnswer(true);
+  };
   return (
     <main >
       <div className="p-10 flex flex-col gap-5">
@@ -25,7 +50,7 @@ export function Answer4() {
             <label className="textfield-label">Array</label>
             <input type="text" className="textfield" placeholder=" " onChange={(e) => setArrayText(e.target.value)} ref={inputRef}/>
           </div>
-          <button className="btn-primary" onClick={findOpenBrackets}>Submit</button>
+          <button className="btn-primary" onClick={handleCheck}>Submit</button>
         </div>
       </div>
       {showAnswer &&
