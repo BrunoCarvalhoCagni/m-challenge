@@ -15,6 +15,9 @@ export function Selector() {
           <li >
             <a href="/question3">Question 3</a>
           </li>
+          <li >
+            <a href="/question4">Question 4</a>
+          </li>
         </ul>
         
       </div>
