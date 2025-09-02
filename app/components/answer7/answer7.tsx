@@ -4,37 +4,22 @@ const carrotTypes = [{kg: 5, price: 100}, {kg: 7, price: 150}, {kg: 3, price: 70
 const capacity = 36; //kg
 
 
-const getMaxValue = (carrotTypes: any[], capacity: number) =>{
+const getMaxValue = (carrotTypes: any[], capacity: number) => {
+  const bag = Array(capacity + 1).fill(0);
 
+  //runs for every kg
+  for (let i = 1; i <= capacity; i++) {
+    for (let carrot of carrotTypes) {
 
- let mostValuableCarrotKg = 0;
- let mostValuableCarrotIndex = 0; 
- let howManyMostValuable = 0;
- let leftover = 0;
- const [maxValue, setMaxValue] = useState(0);
- for(let i=0; i< carrotTypes.length; i++){
-   if(mostValuableCarrotKg < carrotTypes[i].price / carrotTypes[i].kg){
-     mostValuableCarrotKg = carrotTypes[i].price / carrotTypes[i].kg;
-     mostValuableCarrotIndex = i;
-   }
- }
- 
- howManyMostValuable = Math.floor(capacity / carrotTypes[mostValuableCarrotIndex].kg);
- setMaxValue(howManyMostValuable * carrotTypes[mostValuableCarrotIndex].price);
- 
- leftover = Math.floor(capacity % carrotTypes[mostValuableCarrotIndex].kg);
- if(leftover >= 1){
-  if(carrotTypes.some(item => item.kg <= leftover)){
-
+      if (carrot.kg <= i) {
+        bag[i] = Math.max(bag[i], bag[i - carrot.kg] + carrot.price);
+      }
+    }
   }
- }
- console.log(howManyMostValuable);
-
-
-
-
-}
+  return bag[capacity];
+};
 getMaxValue(carrotTypes, capacity);
+
 
 export function Answer7() {
   return (
@@ -51,6 +36,7 @@ export function Answer7() {
         </p>
         <p>Answer:</p>
         <div className="flex items-center gap-5">
+          The max value is: {getMaxValue(carrotTypes, capacity)} 
         </div>
       </div>
     </main>
