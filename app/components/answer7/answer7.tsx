@@ -1,6 +1,40 @@
 
 import { useState, useRef } from "react";
+const carrotTypes = [{kg: 5, price: 100}, {kg: 7, price: 150}, {kg: 3, price: 70}];
+const capacity = 36; //kg
 
+
+const getMaxValue = (carrotTypes: any[], capacity: number) =>{
+
+
+ let mostValuableCarrotKg = 0;
+ let mostValuableCarrotIndex = 0; 
+ let howManyMostValuable = 0;
+ let leftover = 0;
+ const [maxValue, setMaxValue] = useState(0);
+ for(let i=0; i< carrotTypes.length; i++){
+   if(mostValuableCarrotKg < carrotTypes[i].price / carrotTypes[i].kg){
+     mostValuableCarrotKg = carrotTypes[i].price / carrotTypes[i].kg;
+     mostValuableCarrotIndex = i;
+   }
+ }
+ 
+ howManyMostValuable = Math.floor(capacity / carrotTypes[mostValuableCarrotIndex].kg);
+ setMaxValue(howManyMostValuable * carrotTypes[mostValuableCarrotIndex].price);
+ 
+ leftover = Math.floor(capacity % carrotTypes[mostValuableCarrotIndex].kg);
+ if(leftover >= 1){
+  if(carrotTypes.some(item => item.kg <= leftover)){
+
+  }
+ }
+ console.log(howManyMostValuable);
+
+
+
+
+}
+getMaxValue(carrotTypes, capacity);
 
 export function Answer7() {
   return (
