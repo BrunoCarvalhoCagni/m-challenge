@@ -6,7 +6,9 @@ export default [
     route("question2","routes/question2.tsx"),
     route("question3","routes/question3.tsx"),
     route("question4","routes/question4.tsx"),
-    route("question5","routes/question5.tsx")
+    route("question5","routes/question5.tsx"),
+    route("question6","routes/question6.tsx"),
+    route("question7","routes/question7.tsx")
 
 ] satisfies RouteConfig;
 

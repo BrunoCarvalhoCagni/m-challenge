@@ -21,6 +21,12 @@ export function Selector() {
           <li >
             <a href="/question5">Question 5</a>
           </li>
+          <li >
+            <a href="/question6">Question 6</a>
+          </li>
+          <li >
+            <a href="/question7">Question 7</a>
+          </li>
         </ul>
         
       </div>
