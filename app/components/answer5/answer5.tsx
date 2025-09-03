@@ -1,7 +1,4 @@
 
-import { useState, useRef } from "react";
-
-
 export function Answer5() {
   return (
     <main >

@@ -1,0 +1,11 @@
+.achilles{
+    position: absolute;
+    width: 70px;
+    height: auto;
+}
+.tortoise{
+    position: absolute;
+    left: 100px;
+    width: 70px;
+    height: auto;
+}
