@@ -17,7 +17,7 @@ export function Answer5() {
           <p>
             Thinking that we have a fixed number of 100 floors, we can use a linear system to solve this problem by choosing decreasing step sizes like <br />
             x, x-1, x-2, x-3 ... 1 <br />
-            You can simplify this type of progression to {`[x(x+1)]/2 >= 100`} solving this linear system you get the worst case scenario of 14. 
+            You can simplify this type of progression to {`[x(x+1)]/2 >= 100`} <br /> Solving this linear system you get the worst case scenario of 14. 
             
           </p>
         </div>
