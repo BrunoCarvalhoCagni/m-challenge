@@ -17,7 +17,7 @@ export function Answer6() {
       achillesX += distance * 0.02; 
       tortoiseX += 1;
 
-      if(tortoiseX > containerWidth - 220){
+      if(tortoiseX > containerWidth - 210){
         achillesX = 0;
         tortoiseX = 200;
       }else{
